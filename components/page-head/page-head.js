@@ -1,0 +1,1 @@
+"use strict";const e=require("../../common/vendor.js"),t={name:"page-head",props:{title:{type:String,default:""}}};const n=e._export_sfc(t,[["render",function(t,n,r,o,c,s){return{a:e.t(r.title)}}]]);wx.createComponent(n);

@@ -1,0 +1,38 @@
+<view class="container data-v-40ca6bb6"><view wx:if="{{a}}" class="settings-modal data-v-40ca6bb6"><view class="modal-header data-v-40ca6bb6"><text class="modal-title data-v-40ca6bb6">我的设置</text><text class="close-btn data-v-40ca6bb6" bindtap="{{b}}">✕</text></view><view class="modal-body data-v-40ca6bb6"><text class="setting-group-title data-v-40ca6bb6">学习资源偏好</text><view class="setting-list data-v-40ca6bb6"><view class="{{['data-v-40ca6bb6', 'setting-item', e]}}" bindtap="{{f}}"><view class="{{['data-v-40ca6bb6', 'radio-circle', d]}}"><text wx:if="{{c}}" class="check data-v-40ca6bb6">✓</text></view><view class="data-v-40ca6bb6"><text class="setting-label data-v-40ca6bb6">我有配套书籍</text><text class="setting-desc data-v-40ca6bb6">会提示查书页码，获取深度内容</text></view></view><view class="{{['data-v-40ca6bb6', 'setting-item', i]}}" bindtap="{{j}}"><view class="{{['data-v-40ca6bb6', 'radio-circle', h]}}"><text wx:if="{{g}}" class="check data-v-40ca6bb6">✓</text></view><view class="data-v-40ca6bb6"><text class="setting-label data-v-40ca6bb6">只用小程序</text><text class="setting-desc data-v-40ca6bb6">使用内置完整教程</text></view></view></view><button class="btn-primary data-v-40ca6bb6" bindtap="{{k}}">保存</button><view wx:if="{{l}}" class="logout-link data-v-40ca6bb6" bindtap="{{m}}"><text class="data-v-40ca6bb6">退出登录</text></view></view></view>
+    <!-- Logout Confirmation Modal -->
+    <view wx:if="{{showLogoutConfirm}}" class="logout-modal-mask data-v-40ca6bb6">
+        <view class="logout-modal data-v-40ca6bb6">
+             <view class="logout-icon-circle data-v-40ca6bb6">
+                <text class="icon-lock data-v-40ca6bb6">🔒</text>
+            </view>
+            <text class="logout-title data-v-40ca6bb6">确认退出登录?</text>
+            <text class="logout-desc data-v-40ca6bb6">退出后，您的本地缓存将保留，但下次需要重新授权登录。</text>
+            <view class="logout-actions data-v-40ca6bb6">
+                <button class="btn-cancel data-v-40ca6bb6" bindtap="{{cancelLogout}}">取消</button>
+                <button class="btn-confirm-logout data-v-40ca6bb6" bindtap="{{confirmLogout}}">退出</button>
+            </view>
+        </view>
+    </view>
+
+    <view wx:elif="{{n}}" class="settings-modal data-v-40ca6bb6"><view class="modal-header data-v-40ca6bb6"><text class="modal-title data-v-40ca6bb6">快捷登录</text><text class="close-btn data-v-40ca6bb6" bindtap="{{o}}">✕</text></view><view class="modal-body data-v-40ca6bb6" style="align-items:center"><button class="avatar-wrapper data-v-40ca6bb6" open-type="chooseAvatar" bindchooseavatar="{{q}}"><image class="avatar-lg data-v-40ca6bb6" src="{{p}}" mode="aspectFill"></image><view class="camera-badge data-v-40ca6bb6">📷</view></button><text class="hint-text data-v-40ca6bb6">点击设置头像</text><view class="input-form data-v-40ca6bb6"><text class="label data-v-40ca6bb6">昵称</text><input type="nickname" class="nickname-input data-v-40ca6bb6" placeholder="请输入昵称" bindblur="{{r}}" value="{{s}}" bindinput="{{t}}"/></view><button class="btn-primary mt-4 data-v-40ca6bb6" bindtap="{{v}}">确认登录</button></view></view><view wx:else class="content data-v-40ca6bb6"><view class="top-card data-v-40ca6bb6"><view class="user-header data-v-40ca6bb6" bindtap="{{B}}"><view class="data-v-40ca6bb6"><text class="greeting-title data-v-40ca6bb6">{{w}}</text><text class="greeting-sub data-v-40ca6bb6">{{x}}</text></view>            <view class="header-actions data-v-40ca6bb6">
+                <text class="icon-settings data-v-40ca6bb6" catchtap="{{y}}">⚙️</text>
+                <view class="avatar-container data-v-40ca6bb6" style="position: relative;">
+                    <view class="avatar data-v-40ca6bb6" bindtap="{{handleAvatarClick}}">
+                        <image wx:if="{{z}}" src="{{A}}" class="avatar-img data-v-40ca6bb6" mode="aspectFill"/>
+                        <text wx:else class="data-v-40ca6bb6">未</text>
+                    </view>
+
+                    <!-- Logout Popover -->
+                    <view wx:if="{{showLogoutPopover}}" class="logout-popover data-v-40ca6bb6">
+                        <text class="popover-nickname data-v-40ca6bb6">{{userInfo.nickName}}</text>
+                        <view class="popover-status data-v-40ca6bb6">
+                             <view class="status-dot data-v-40ca6bb6"></view>
+                             <text class="status-text data-v-40ca6bb6">已登录</text>
+                        </view>
+                        <view class="popover-btn data-v-40ca6bb6" bindtap="{{handleLogout}}">
+                            <text class="data-v-40ca6bb6">退出登录</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view><view class="{{['growth-card', 'data-v-40ca6bb6', I]}}"><view class="bg-icon-tree data-v-40ca6bb6"><text class="data-v-40ca6bb6">🌳</text></view><view class="card-inner data-v-40ca6bb6"><view class="level-row data-v-40ca6bb6"><view class="icon-level-circle data-v-40ca6bb6"><text class="data-v-40ca6bb6">{{C}}</text></view><view class="data-v-40ca6bb6"><text class="level-title data-v-40ca6bb6">我的小树 Lv.{{D}} <text class="level-badge data-v-40ca6bb6">{{E}}</text></text><text class="level-desc data-v-40ca6bb6">当前阶段：{{F}}</text></view></view><view class="progress-section data-v-40ca6bb6"><view class="progress-text-row data-v-40ca6bb6"><text class="data-v-40ca6bb6">成长值 {{G}}/600</text><text class="bold data-v-40ca6bb6">再用 3 次升级</text></view><view class="progress-bar-bg data-v-40ca6bb6"><view class="progress-bar-fill data-v-40ca6bb6" style="{{'width:' + H}}"></view></view></view></view></view></view><scroll-view scroll-y class="scroll-content data-v-40ca6bb6"><view class="section data-v-40ca6bb6"><view class="section-title-row data-v-40ca6bb6"><view class="flex-center data-v-40ca6bb6"><text class="icon-zap data-v-40ca6bb6">⚡</text> 小树当前能力</view><text class="section-sub data-v-40ca6bb6">助教越来越懂你</text></view><view class="info-card data-v-40ca6bb6"><view class="capability-item data-v-40ca6bb6"><view class="check-box data-v-40ca6bb6"><text class="data-v-40ca6bb6">✓</text></view><view class="cap-text data-v-40ca6bb6"><view class="cap-head data-v-40ca6bb6"><text class="cap-name data-v-40ca6bb6">基础生成 (Lv.1)</text><text class="tag-unlocked data-v-40ca6bb6">已解锁</text></view><text class="cap-desc data-v-40ca6bb6">能完成各类文档生成，需手动选择配置</text></view></view></view></view><view class="section data-v-40ca6bb6"><view class="section-title-row data-v-40ca6bb6"><view class="flex-center data-v-40ca6bb6"><text class="icon-users data-v-40ca6bb6">👥</text> 小树背后的团队</view></view><view class="info-card data-v-40ca6bb6"><view class="team-item data-v-40ca6bb6"><view class="team-avatar data-v-40ca6bb6"><text class="data-v-40ca6bb6">王</text></view><view class="data-v-40ca6bb6"><text class="team-name data-v-40ca6bb6">王雪霏 - 内容负责人</text><text class="team-quote data-v-40ca6bb6">"我们每天和老师们一起打磨每一个场景的表达方式"</text></view></view></view><text class="version-text data-v-40ca6bb6">小树AI助教 v1.3.0 · 让教育工作更有温度</text></view></scroll-view></view></view>

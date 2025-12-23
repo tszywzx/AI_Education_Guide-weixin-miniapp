@@ -1,0 +1,1 @@
+"use strict";const t=require("../common/vendor.js").defineStore("counter",{state:()=>({count:0}),getters:{doubleCount:t=>2*t.count},actions:{increment(){this.count++},decrement(){this.count--}}});exports.useCounterStore=t;

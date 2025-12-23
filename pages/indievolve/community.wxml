@@ -1,0 +1,112 @@
+<view class="container">
+  <!-- Header Content: Sticky Top -->
+  <view class="header-section">
+    <!-- Title Row -->
+    <view class="title-row">
+      <view>
+        <view class="page-title-wrap">
+          <text class="page-title">共创社区</text>
+          <view class="pro-badge"><text class="pro-text">专业版</text></view>
+        </view>
+        <text class="page-subtitle">连接 1,200+ 创新教师与专业内容团队</text>
+      </view>
+      <view class="contribution-badge">
+        <text class="icon-sparkle">✨</text>
+        <text class="contribution-text">贡献值: 120</text>
+      </view>
+    </view>
+    
+    <!-- Team Service Card -->
+    <view class="service-card-wrap">
+      <view class="service-card">
+         <view class="card-bg-overlay"></view>
+         <view class="card-inner">
+            <view class="card-header">
+               <text class="icon-expert">🎓</text>
+               <text class="card-title-text">真人内容团队</text>
+            </view>
+            <text class="card-subtitle-text">我们不仅仅是AI，更是懂教育的伙伴</text>
+            
+            <view class="card-actions">
+               <button class="action-btn" hover-class="btn-hover">
+                  <text class="action-icon">💡</text> 求场景 / 许愿池
+               </button>
+               <button class="action-btn" hover-class="btn-hover">
+                  <text class="action-icon">🛠️</text> 专家问诊
+               </button>
+            </view>
+         </view>
+      </view>
+    </view>
+
+    <!-- Tabs -->
+    <view class="tabs-row">
+       <view class="tab-item" bindtap="setActiveTab" data-tab="discover">
+          <text class="tab-text {{activeTab === 'discover' ? 'active' : ''}}">发现共创</text>
+          <view wx:if="{{activeTab === 'discover'}}" class="tab-indicator"></view>
+       </view>
+       <view class="tab-item" bindtap="setActiveTab" data-tab="official">
+          <view class="tab-text-wrap">
+             <text class="tab-text {{activeTab === 'official' ? 'active' : ''}}">官方严选</text>
+             <text class="icon-verified">✅</text>
+          </view>
+          <view wx:if="{{activeTab === 'official'}}" class="tab-indicator"></view>
+       </view>
+    </view>
+  </view>
+  
+  <!-- Feed Content -->
+  <scroll-view scroll-y class="feed-content">
+     <view class="feed-list">
+        <view wx:for="{{filteredFeed}}" wx:key="id" 
+              class="feed-item {{item.isOfficial ? 'official-item' : 'standard-item'}}">
+           
+           <!-- Header -->
+           <view class="item-header">
+              <view class="author-info">
+                 <image src="{{item.avatar}}" class="avatar"></image>
+                 <view class="author-text">
+                    <view class="name-row">
+                       <text class="author-name">{{ item.author }}</text>
+                       <text wx:if="{{item.isOfficial}}" class="icon-verified-small">✅</text>
+                    </view>
+                    <text class="time-text">{{ item.time }}</text>
+                 </view>
+              </view>
+              
+              <view wx:if="{{item.type === 'ai_case'}}" class="type-badge ai-case">
+                 <text>✨ AI案例</text>
+              </view>
+              <view wx:else class="type-badge resource">
+                 <text>📄 资源</text>
+              </view>
+           </view>
+           
+           <!-- Content -->
+           <text class="item-title">{{ item.title }}</text>
+           <text class="item-desc">{{ item.description }}</text>
+           
+           <!-- Footer -->
+           <view class="item-footer">
+              <view class="stats-row">
+                 <view class="stat-item">
+                    <text class="icon-stat">❤️</text> {{ item.likes }}
+                 </view>
+                 <view class="stat-item">
+                    <text class="icon-stat">⬇️</text> {{ item.downloads }}次
+                 </view>
+              </view>
+              <text class="icon-more">⋯</text>
+           </view>
+        </view>
+     </view>
+     <!-- Padding for bottom tabbar -->
+     <view style="height: 120rpx;"></view>
+  </scroll-view>
+  
+  <!-- FAB -->
+  <view class="fab-btn" hover-class="fab-hover">
+     <text class="icon-plus">➕</text>
+  </view>
+  
+</view>

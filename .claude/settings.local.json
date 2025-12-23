@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat:*)",
+      "Bash(\"/e/微信web开发者工具/cli.bat\" --help)"
+    ]
+  }
+}
