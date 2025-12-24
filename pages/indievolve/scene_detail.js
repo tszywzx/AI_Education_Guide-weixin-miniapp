@@ -932,6 +932,7 @@ Language: Simplified Chinese.`;
         },
         setStage(s) {
             console.log('[DEBUG] setStage called with:', s);
+            console.log('[DEBUG] Setting L to:', s === 'web_guide');
             this.stage = s;
 
             // Manual Visibility Logic (Since computed behavior is missing)
